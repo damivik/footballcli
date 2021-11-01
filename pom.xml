@@ -101,6 +101,19 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>appassembler-maven-plugin</artifactId>
+					<version>1.10</version>
+					<configuration>
+						<programs>
+							<program>
+								<mainClass>com.github.damivik.footballcli.Football</mainClass>
+								<id>fball</id>
+							</program>
+						</programs>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
