@@ -28,6 +28,8 @@ Commands:
 
 To view available competitions use the command : `$ fball competitions`
 
+![Screenshot of competitions command](https://github.com/damivik/footballcli/blob/main/docs/img/competitions_command.png)
+
 ### Matches Command
 
 To get scores of past/live matches and upcoming fixtures use the command : `$ fball matches`
@@ -42,6 +44,8 @@ List matches
   -V, --version     Print version information and exit.
 ```
 
+![Screenshot of matches command](https://github.com/damivik/footballcli/blob/main/docs/img/matches_command.png)
+
 ### Standings Command
 
 To get current league table for a particular league
@@ -55,6 +59,8 @@ View current standings for a particular league
   -V, --version   Print version information and exit.
 ```
 
+![Screenshot of standings command](https://github.com/damivik/footballcli/blob/main/docs/img/standings_command.png)
+
 ### Scorers Command
 
 To get the top scorers for a particular league
@@ -67,3 +73,4 @@ View top scorers for a particular league
   -h, --help      Show this help message and exit.
   -V, --version   Print version information and exit.
 ```
+![Screenshot of scorers command](https://github.com/damivik/footballcli/blob/main/docs/img/scorers_command.png)
