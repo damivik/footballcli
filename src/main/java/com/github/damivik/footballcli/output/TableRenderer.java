@@ -39,7 +39,7 @@ public class TableRenderer {
 
 	public String render() {
 		List<Integer> columnWidths;
-		TableComputation2 computation = new TableComputation2();
+		TableComputation computation = new TableComputation();
 
 		columnWidths = columnHeaders == null ? computation.computeColumnWidths(columnCount, rows)
 				: computation.computeColumnWidths(columnCount, columnHeaders, rows);

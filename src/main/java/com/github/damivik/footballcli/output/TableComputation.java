@@ -1,51 +1,39 @@
 package com.github.damivik.footballcli.output;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TableComputation {
+	public List<Integer> computeColumnWidths(int columnCount, List<String> columnHeaders, List<List<String>> rows) {
+		List<Integer> columnWidths = new ArrayList<>();
 
-	public List<Integer> columnsWidth(List<String> columnHeaders, List<List<String>> data) {
+		for (String header : columnHeaders) {
+			columnWidths.add(header.length());
+		}
 
-		List<Integer> columnsWidth = new ArrayList<>();
-
-		int columnCount = columnHeaders.size();
-
-		for (int column = 0; column < columnCount; column++) {
-
-			int maxRowLength = columnHeaders.get(column).length();
-
-			int rowCount = data.size();
-
-			for (int row = 0; row < rowCount; row++) {
-				if (data.get(row).get(column).length() > maxRowLength) {
-					maxRowLength = data.get(row).get(column).length();
+		for (List<String> row : rows) {
+			for (int i = 0; i < columnCount; i++) {
+				if (row.get(i).length() > columnWidths.get(i)) {
+					columnWidths.set(i, row.get(i).length());
 				}
 			}
-			columnsWidth.add(maxRowLength);
 		}
-		return columnsWidth;
+
+		return columnWidths;
 	}
+	
+	public List<Integer> computeColumnWidths(int columnCount, List<List<String>> rows) {
+		List<Integer> columnWidths = Arrays.asList(new Integer[columnCount]);
 
-	public List<Integer> columnsWidth(List<List<String>> data) {
-
-		List<Integer> columnsWidth = new ArrayList<>();
-
-		int columnCount = data.get(0).size();
-
-		for (int column = 0; column < columnCount; column++) {
-
-			int maxRowLength = 0;
-
-			int rowCount = data.size();
-
-			for (int row = 0; row < rowCount; row++) {
-				if (data.get(row).get(column).length() > maxRowLength) {
-					maxRowLength = data.get(row).get(column).length();
+		for (List<String> row : rows) {
+			for (int i = 0; i < columnCount; i++) {
+				if (columnWidths.get(i) == null || row.get(i).length() > columnWidths.get(i)) {
+					columnWidths.set(i, row.get(i).length());
 				}
 			}
-			columnsWidth.add(maxRowLength);
 		}
-		return columnsWidth;
+
+		return columnWidths;
 	}
 }
