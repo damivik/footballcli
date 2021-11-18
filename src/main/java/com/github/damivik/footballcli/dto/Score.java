@@ -9,6 +9,10 @@ public class Score {
 
 	public Score() {
 	}
+	
+	public Score(Period fullTime) {
+		this.fullTime = fullTime;
+	}
 
 	public String getDuration() {
 		return duration;
@@ -51,9 +55,16 @@ public class Score {
 	}
 
 	public class Period {
-
 		private int homeTeam;
 		private int awayTeam;
+		
+		public Period() {
+		}
+		
+		public Period(int homeTeam, int awayTeam) {
+			this.homeTeam = homeTeam;
+			this.awayTeam = awayTeam;
+		}
 
 		public int getHomeTeam() {
 			return homeTeam;

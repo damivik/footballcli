@@ -14,21 +14,19 @@ import com.github.damivik.footballcli.output.TableRenderer;
 
 public class StandingService {
 	private APIRequest apiRequest;
-	private String competitionCode;
+	private TableRenderer renderer;
 
-	public StandingService(APIRequest apiRequest, String competitionCode) {
+	public StandingService(APIRequest apiRequest, TableRenderer renderer) {
 		this.apiRequest = apiRequest;
-		this.competitionCode = competitionCode;
+		this.renderer = renderer;
 	}
 
-	public Output standings() {
+	public Output getStandings(String competitionCode) {
 		try {
 			StandingsResponse response = apiRequest.getStandings(competitionCode);
 			String message = "";
 			for (Standing standing : response.getStanding()) {
 				if (standing.getTable().length > 0) {
-
-					TableRenderer renderer = new TableRenderer();
 					if (standing.getGroup() != null) {
 						renderer = renderer.setTitle(standing.getGroup());
 					}

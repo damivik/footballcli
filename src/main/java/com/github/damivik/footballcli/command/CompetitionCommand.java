@@ -15,6 +15,7 @@ public class CompetitionCommand implements Callable<Integer> {
 	
 	@Spec
 	private CommandSpec spec;
+	
 	private CompetitionService competitionService;
 
 	public CompetitionCommand(CompetitionService competitionService) {

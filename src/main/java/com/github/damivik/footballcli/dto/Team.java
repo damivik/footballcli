@@ -1,11 +1,14 @@
 package com.github.damivik.footballcli.dto;
 
 public class Team {
-	
 	private int id;
 	private String name;
 
 	public Team() {
+	}
+	
+	public Team(String name) {
+		this.name = name;
 	}
 
 	public int getId() {

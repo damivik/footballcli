@@ -14,6 +14,16 @@ public class Match {
 	public Match() {
 	}
 
+	public Match(Team homeTeam, Team awayTeam, Competition competition, Score score, MatchStatus status,
+			LocalDateTime utcDate) {
+		this.homeTeam = homeTeam;
+		this.awayTeam = awayTeam;
+		this.competition = competition;
+		this.score = score;
+		this.status = status;
+		this.utcDate = utcDate;
+	}
+
 	public int getId() {
 		return id;
 	}

@@ -13,14 +13,14 @@ import com.github.damivik.footballcli.output.TableRenderer;
 
 public class ScorerService {
 	private APIRequest apiRequest;
-	private String competitionCode;
+	TableRenderer renderer;
 
-	public ScorerService(APIRequest apiRequest, String competitionCode) {
+	public ScorerService(APIRequest apiRequest, TableRenderer renderer) {
 		this.apiRequest = apiRequest;
-		this.competitionCode = competitionCode;
+		this.renderer = renderer;
 	}
 
-	public Output scorers() {
+	public Output getScorers(String competitionCode) {
 		try {
 			ScorersResponse response = apiRequest.getScorers(competitionCode);
 			TableRenderer renderer = new TableRenderer();
